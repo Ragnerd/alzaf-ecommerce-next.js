@@ -18,10 +18,9 @@ export default function BannerCarousel({ banners }) {
   if (!banners?.length) return null;
 
   return (
-    <div className="relative h-[320px] w-full overflow-hidden rounded-lg">
+    <div className="relative h-80 w-full overflow-hidden rounded-lg">
       <div
-        className="flex h-full transition-transform duration-1300 ease-[cubic-bezier(0.4,0,0.2,1)]
-"
+        className="flex h-full transition-transform duration-1300 [cubic-bezier(0.4,0,0.2,1)]"
         style={{
           width: `${banners.length * 100}%`,
           transform: `translateX(-${current * (100 / banners.length)}%)`,
@@ -30,7 +29,7 @@ export default function BannerCarousel({ banners }) {
         {banners.map((banner, index) => (
           <div
             key={index}
-            className="relative h-full w-full flex-shrink-0"
+            className="relative h-full w-full shrink-0"
             style={{ width: `${100 / banners.length}%` }}
           >
             {/* Background */}
