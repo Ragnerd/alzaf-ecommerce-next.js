@@ -1,3 +1,76 @@
+# Alzaf Frontend Assignment – E-Commerce (Next.js)
+
+This project is a server-side rendered e-commerce frontend built using **Next.js App Router**, developed as part of the **Frontend Developer Task for Alzaf IT**.
+
+The goal was to strictly follow the provided API contract, demonstrate strong SSR fundamentals, and implement clean, scalable frontend architecture.
+
+---
+
+## 🔗 Live Demo
+👉 https://YOUR-DEPLOYMENT-URL.vercel.app
+
+## 🔗 GitHub Repository
+👉 https://github.com/YOUR-USERNAME/alzaf-frontend-assignment
+
+---
+
+## ✅ Implemented Features
+
+### Mandatory Requirements
+- ✅ **Homepage**
+  - Banner carousel (SSR)
+  - Featured products grid (max 4 per row on large screens)
+- ✅ **Products Listing Page**
+  - Server-side data fetching
+  - Category filtering
+  - Price range filtering (min / max)
+  - Search (name, description, brand)
+  - Sorting (price, name, rating)
+  - Pagination
+- ✅ **Product Details Page**
+  - Server-side fetch via `/products/{id}`
+- ✅ **Header with category navigation**
+
+---
+
+### Optional / Bonus Implementations
+- ✅ **Graceful 500 error handling**
+  - Product ID `1` intentionally triggers a server error and is handled properly
+- ✅ **404 handling**
+  - Invalid product routes display a not-found page
+- ✅ **Fully responsive**
+- ✅ **Clean separation of concerns**
+  - API layer (`lib/api`)
+  - UI components
+  - Page-level SSR
+
+---
+
+## 🧠 Technical Decisions
+
+- **SSR First**: All data fetching is server-side using the App Router.
+- **No client-side fetching hacks**: Query params drive UI state.
+- **Dynamic rendering** where necessary to avoid stale data.
+- **Scalable project structure** suitable for real production use.
+
+---
+
+## 🛠️ Tech Stack
+
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- API-driven architecture (no mock data)
+
+---
+
+## 🚀 Getting Started (Local)
+
+```bash
+npm install
+npm run dev
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
