@@ -7,7 +7,7 @@ The goal was to strictly follow the provided API contract, demonstrate strong SS
 ---
 
 ## 🔗 Live Demo
-👉 https://YOUR-DEPLOYMENT-URL.vercel.app
+👉 [https://YOUR-DEPLOYMENT-URL.vercel.app](https://alzaf-ecommerce-next-js.vercel.app/)
 
 ## 🔗 GitHub Repository
 👉 [Github repo link](https://github.com/Ragnerd/alzaf-ecommerce-next.js/)
