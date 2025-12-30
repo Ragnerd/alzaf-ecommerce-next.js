@@ -10,7 +10,7 @@ The goal was to strictly follow the provided API contract, demonstrate strong SS
 👉 https://YOUR-DEPLOYMENT-URL.vercel.app
 
 ## 🔗 GitHub Repository
-👉 https://github.com/YOUR-USERNAME/alzaf-frontend-assignment
+👉 [https://github.com/YOUR-USERNAME/alzaf-frontend-assignment](https://github.com/Ragnerd/alzaf-ecommerce-next.js/)
 
 ---
 
