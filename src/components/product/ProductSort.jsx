@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const SORT_OPTIONS = [
   { label: "Price ↑", value: "price-asc" },
   { label: "Price ↓", value: "price-desc" },
@@ -8,22 +6,27 @@ const SORT_OPTIONS = [
   { label: "Rating", value: "rating-desc" },
 ];
 
-export default function ProductSort({ currentSort }) {
+export default function ProductSort({ currentSort, searchParams = {} }) {
+  const safeParams = Object.fromEntries(
+    Object.entries(searchParams).filter(([, v]) => v !== undefined)
+  );
+
   return (
     <div className="flex gap-4 text-sm">
-      {SORT_OPTIONS.map((option) => (
-        <Link
-          key={option.value}
-          href={`/products?sort=${option.value}`}
-          className={
-            currentSort === option.value
-              ? "font-semibold text-black"
-              : "text-gray-500 hover:text-black"
-          }
-        >
-          {option.label}
-        </Link>
-      ))}
+      {SORT_OPTIONS.map((option) => {
+        const params = new URLSearchParams(safeParams);
+        params.set("sort", option.value);
+
+        return (
+          <a
+            key={option.value}
+            href={`/products?${params.toString()}`}
+            className={option.value === currentSort ? "font-semibold" : ""}
+          >
+            {option.label}
+          </a>
+        );
+      })}
     </div>
   );
 }

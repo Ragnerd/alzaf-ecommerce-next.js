@@ -16,7 +16,7 @@ export default async function ProductDetailsPage({ params }) {
       throw new Error("Internal Server Error");
     }
 
-    // failure will return 404
+    // return 404
     notFound();
   }
 

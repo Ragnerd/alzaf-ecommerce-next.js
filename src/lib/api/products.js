@@ -2,7 +2,6 @@ const BASE_URL = "https://alzaf-frontend-2025.vercel.app/api";
 
 export async function getProducts(params = {}) {
   const query = new URLSearchParams();
-
   if (params.category) query.append("category", params.category);
   if (params.sort) query.append("sort", params.sort);
   if (params.page) query.append("page", params.page);
@@ -17,6 +16,9 @@ export async function getProducts(params = {}) {
       : `${BASE_URL}/products`;
 
   const res = await fetch(url, { cache: "no-store" });
+
+  console.log("FETCHING PRODUCTS WITH PARAMS:", params);
+  console.log("FINAL URL:", url);
 
   if (!res.ok) {
     throw new Error("Failed to fetch products");

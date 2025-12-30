@@ -17,10 +17,12 @@ export default function ProductCard({ product }) {
       </div>
 
       <h3 className="text-sm font-medium text-gray-900">{product.name}</h3>
-
-      <p className="mt-1 text-sm font-semibold text-gray-800">
-        ${product.price}
-      </p>
+      <div className="flex items-center justify-between">
+        <p className="mt-1 text-sm font-semibold text-gray-800">
+          ${product.price}
+        </p>
+        <p className="text-xs text-gray-500">⭐ {product.rating}</p>
+      </div>
     </Link>
   );
 }
