@@ -1,28 +1,25 @@
 const BASE_URL = "https://alzaf-frontend-2025.vercel.app/api";
 
 export async function getProducts(params = {}) {
-  const searchParams = new URLSearchParams(params).toString();
+  const query = new URLSearchParams();
 
-  const url = `${BASE_URL}/products${searchParams ? `?${searchParams}` : ""}`;
+  if (params.category) query.append("category", params.category);
+  if (params.sort) query.append("sort", params.sort);
+  if (params.page) query.append("page", params.page);
+  if (params.limit) query.append("limit", params.limit);
+  if (params.search) query.append("search", params.search);
+  if (params.minPrice) query.append("minPrice", params.minPrice);
+  if (params.maxPrice) query.append("maxPrice", params.maxPrice);
+
+  const url =
+    query.toString().length > 0
+      ? `${BASE_URL}/products?${query.toString()}`
+      : `${BASE_URL}/products`;
 
   const res = await fetch(url, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch products");
-  }
-
-  return res.json();
-}
-
-export async function getProductbyId(id) {
-  const res = await fetch(`${BASE_URL}/products/${id}`, { cache: "no-store" });
-
-  if (res.status === 404) {
-    return null;
-  }
-
-  if (res.status === 500) {
-    throw new Error("Server error while fetching product");
   }
 
   return res.json();

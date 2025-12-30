@@ -1,6 +1,13 @@
-import { getProducts } from "./products.js";
+const BASE_URL = "https://alzaf-frontend-2025.vercel.app/api";
 
-export async function getProductById(id) {
-  const products = await getProducts();
-  return products.find((product) => product.id === id) || null;
+export async function getProductbyId(id) {
+  const res = await fetch(`${BASE_URL}/products/${id}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error(`Failed to fetch product ${id}`);
+  }
+
+  return res.json();
 }

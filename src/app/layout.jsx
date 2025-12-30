@@ -4,7 +4,7 @@ import { getCategories } from "@/lib/api/categories";
 
 export default async function RootLayout({ children }) {
   const response = await getCategories();
-  const categories = response?.categories ?? [];
+  const categories = response?.data?.categories ?? [];
 
   return (
     <html lang="en">
